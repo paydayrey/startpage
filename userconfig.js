@@ -21,12 +21,6 @@ const default_config = {
               icon_color: palette.blue,
             },
             {
-              name: "classroom",
-              url: "https://classroom.google.com/u/1/",
-              icon: "books",
-              icon_color: palette.green,
-            },
-            {
               name: "docs",
               url: "https://docs.google.com/document/u/0/",
               icon: "file-text",
