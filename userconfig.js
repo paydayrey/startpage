@@ -57,7 +57,7 @@ const default_config = {
             },
             {
               name: "discord",
-              url: "https://discord.com/channels/@me",
+              url: "https://wwww.discordapp.com/users/690293482526605495",
               icon: "brand-discord",
               icon_color: palette.blue,
             },
@@ -91,7 +91,7 @@ const default_config = {
           links: [
             {
               name: "leetcode",
-              url: "https://leetcode.com/u/ashish0kumar/",
+              url: "https://leetcode.com/u/paydayrey/",
               icon: "brand-leetcode",
               icon_color: palette.yellow,
             },
@@ -109,18 +109,10 @@ const default_config = {
             },
           ]
         },
-        {
-          name: "",
-          links: [
+      
             {
-              name: "chatgpt",
-              url: "https://chatgpt.com/",
-              icon: "brand-openai",
-              icon_color: palette.teal,
-            },
-            {
-              name: "claude",
-              url: "https://claude.ai/new",
+              name: "Perplexity",
+              url: "https://www.perplexity.ai/",
               icon: "robot",
               icon_color: palette.peach,
             },
