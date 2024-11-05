@@ -57,7 +57,7 @@ const default_config = {
             },
             {
               name: "discord",
-              url: "https://discord.com/channels/@me",
+              url: "https://discord.com/users/690293482526605495",
               icon: "brand-discord",
               icon_color: palette.blue,
             },
