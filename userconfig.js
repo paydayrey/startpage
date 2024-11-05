@@ -8,7 +8,7 @@ const default_config = {
   localIcons: true,
   tabs: [
     {
-      name: "home",
+      name: "Rey",
       background_url: `src/img/banners/cbg-8.gif`,
       categories: [
         {
