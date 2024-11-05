@@ -8,7 +8,7 @@ const default_config = {
   localIcons: true,
   tabs: [
     {
-      name: "Rey",
+      name: "rey",
       background_url: `src/img/banners/cbg-8.gif`,
       categories: [
         {
@@ -57,7 +57,7 @@ const default_config = {
             },
             {
               name: "discord",
-              url: "https://wwww.discordapp.com/users/690293482526605495",
+              url: "https://discord.com/channels/@me",
               icon: "brand-discord",
               icon_color: palette.blue,
             },
@@ -68,7 +68,7 @@ const default_config = {
           links: [
             {
               name: "github",
-              url: "https://github.com/ashish0kumar",
+              url: "https://github.com/paydayrey",
               icon: "brand-github",
               icon_color: palette.green,
             },
@@ -109,11 +109,19 @@ const default_config = {
             },
           ]
         },
-      
+        {
+          name: "",
+          links: [
             {
-              name: "Perplexity",
-              url: "https://www.perplexity.ai/",
+              name: "perplexity",
+              url: "https://perplexity.ai",
               icon: "robot",
+              icon_color: palette.teal,
+            },
+            {
+              name: "stack overflow",
+              url: "https://stackoverflow.com/",
+              icon: "brand-stackoverflow",
               icon_color: palette.peach,
             },
             {
