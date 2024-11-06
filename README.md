@@ -6,7 +6,7 @@
 </h3>
 
 <p align="center">
-  <a href="https://github.com/pivoshenko/catppuccin-startpage/stargazers">
+  <a href="https://github.com/paydayrey/startpage/stargazers">
     <img src="https://img.shields.io/github/stars/pivoshenko/catppuccin-startpage?style=for-the-badge&logo=starship&color=a6e3a1&logoColor=D9E0EE&labelColor=302D41">
   </a>
   <a href="https://github.com/pivoshenko/catppuccin-startpage/issues">
