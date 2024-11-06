@@ -9,7 +9,7 @@
   <a href="https://github.com/paydayrey/startpage/stargazers">
     <img src="https://img.shields.io/github/stars/pivoshenko/catppuccin-startpage?style=for-the-badge&logo=starship&color=a6e3a1&logoColor=D9E0EE&labelColor=302D41">
   </a>
-  <a href="https://github.com/pivoshenko/catppuccin-startpage/issues">
+  <a href="https://github.com/paydayrey/startpage/issues">
     <img src="https://img.shields.io/github/issues/pivoshenko/catppuccin-startpage?style=for-the-badge&logo=gitbook&color=fab387&logoColor=D9E0EE&labelColor=302D41">
   </a>
   <a href="https://github.com/paydayrey/startpage/contributors">
