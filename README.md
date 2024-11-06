@@ -12,7 +12,7 @@
   <a href="https://github.com/pivoshenko/catppuccin-startpage/issues">
     <img src="https://img.shields.io/github/issues/pivoshenko/catppuccin-startpage?style=for-the-badge&logo=gitbook&color=fab387&logoColor=D9E0EE&labelColor=302D41">
   </a>
-  <a href="https://github.com/pivoshenko/catppuccin-startpage/contributors">
+  <a href="https://github.com/paydayrey/startpage/contributors">
     <img src="https://img.shields.io/github/contributors/pivoshenko/catppuccin-startpage?style=for-the-badge&logo=github&color=f38ba8&logoColor=D9E0EE&labelColor=302D41">
   </a>
 </p>
@@ -25,7 +25,6 @@
 
 Aesthetic and clean startpage in [**Catppuccin**](https://catppuccin.com/palette) style, hosted on GitHub Pages.
 This startpage is based on the [`dawn`](https://github.com/b-coimbra/dawn), which has even more functionality.
-I've tweaked the page to match my [`dotfiles`](https://github.com/pivoshenko/dotfiles) so check them out as well.
 
 ### 🧠 Main principles
 
