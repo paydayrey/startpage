@@ -73,9 +73,9 @@ const default_config = {
               icon_color: palette.blue,
             },
             {
-              name: "hacker-news",
-              url: "https://news.ycombinator.com",
-              icon: "news",
+              name: "lastfm",
+              url: "https://www.last.fm/user/PAYDAYREY",
+              icon: "brand-lastfm",
               icon_color: palette.peach,
             },
           ],
