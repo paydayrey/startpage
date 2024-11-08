@@ -15,8 +15,8 @@ const default_config = {
           name: "",
           links: [
             {
-              name: "gmail",
-              url: "https://mail.google.com",
+              name: "mail",
+              url: "mailto:Rey@Paydayrey.com",
               icon: "brand-gmail",
               icon_color: palette.blue,
             },
