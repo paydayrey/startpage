@@ -53,6 +53,22 @@ class Weather extends Component {
 
   style() {
     return `
+    .weather-widget {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        max-width: 280px;
+        width: 100%;
+        padding: 1rem;
+      }
+
+      .weather-card {
+        background: ${CONFIG.palette.mantle};
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 4px ${CONFIG.palette.mantle}, 0 5px 5px rgb(0 0 0 / 20%);
+      }
       .weather-icon {
           margin-right: 10px;
           display: flex;
@@ -99,6 +115,13 @@ class Weather extends Component {
 
       .weather-condition-icon.cloudy {
           color: ${CONFIG.palette.blue};
+      }
+       @media (max-width: 768px) {
+        .weather-widget {
+          top: 10px;
+          right: 10px;
+          padding: 0.5rem;
+        }
       }
     `;
   }
