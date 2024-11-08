@@ -16,7 +16,7 @@ class AboutComponent extends Component {
               ${category.links.map(link => `
                 <div class="about-item">
                   <div class="about-icon">
-                    <i class="ti ti-${link.icon}" style="color: ${link.icon_color}"></i>
+                    <i class="ti ti-${link.icon}"></i>
                   </div>
                   <div class="about-content">
                     <h3>${link.name}</h3>
