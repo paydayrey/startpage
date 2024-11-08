@@ -14,39 +14,43 @@ class Links extends Component {
   static getAboutSection() {
     return `
       <div class="about-section">
-        <div class="about-item">
-          <div class="about-icon">
-            <i class="ti ti-code" style="color: ${CONFIG.palette.blue}"></i>
+        ${[
+          {
+            icon: "code",
+            color: CONFIG.palette.blue,
+            title: "Full Stack Developer",
+            content: "Building efficient and scalable web applications"
+          },
+          {
+            icon: "stack",
+            color: CONFIG.palette.red,
+            title: "Tech Stack",
+            content: "JavaScript • Python • React • Node.js • MongoDB"
+          },
+          {
+            icon: "tool",
+            color: CONFIG.palette.yellow,
+            title: "Tools",
+            content: "Git • Docker • VS Code • Linux"
+          }
+        ].map((item, index) => `
+          <div class="about-item" style="--index: ${index}">
+            <div class="about-icon">
+              <i class="ti ti-${item.icon}" style="color: ${item.color}"></i>
+            </div>
+            <div class="about-content">
+              <h3>${item.title}</h3>
+              <p>${item.content}</p>
+            </div>
           </div>
-          <div class="about-content">
-            <h3>Full Stack Developer</h3>
-            <p>Building efficient and scalable web applications</p>
-          </div>
-        </div>
-        <div class="about-item">
-          <div class="about-icon">
-            <i class="ti ti-stack" style="color: ${CONFIG.palette.red}"></i>
-          </div>
-          <div class="about-content">
-            <h3>Tech Stack</h3>
-            <p>JavaScript • Python • React • Node.js • MongoDB</p>
-          </div>
-        </div>
-        <div class="about-item">
-          <div class="about-icon">
-            <i class="ti ti-tool" style="color: ${CONFIG.palette.yellow}"></i>
-          </div>
-          <div class="about-content">
-            <h3>Tools</h3>
-            <p>Git • Docker • VS Code • Linux</p>
-          </div>
-        </div>
+        `).join('')}
       </div>
     `;
   }
 
   static getAll(tabName, tabs) {
     const { categories } = tabs.find((f) => f.name === tabName);
+    let linkIndex = 3; // Start after about items
     return `
       ${this.getAboutSection()}
       <div class="links-section">
@@ -59,7 +63,7 @@ class Links extends Component {
                 ${links
                   .map(
                     (link) => `
-                    <div class="link-info">
+                    <div class="link-info" style="--index: ${linkIndex++}">
                       <a href="${link.url}" target="_blank">
                         ${Links.getIcon(link)}
                         ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
@@ -119,6 +123,17 @@ class Tabs extends Component {
 
   style() {
     return `
+      @keyframes dropIn {
+        0% {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
       #panels, #panels ul,
       #panels .links {
           position: absolute;
@@ -171,10 +186,6 @@ class Tabs extends Component {
           --flavour: ${CONFIG.palette.sapphire};
       }
 
-      .categories ul:nth-child(2) {
-          --flavour: ${CONFIG.palette.peach};
-      }
-
       .categories ul .links {
           box-shadow: inset -1px 0 var(--flavour);
       }
@@ -214,6 +225,9 @@ class Tabs extends Component {
 
       .categories .link-info {
           display: inline-flex;
+          opacity: 0;
+          animation: dropIn 0.4s ease forwards;
+          animation-delay: calc(var(--index) * 0.1s);
       }
 
       .categories .link-info:not(:last-child) { margin-right: 1em; }
@@ -275,23 +289,6 @@ class Tabs extends Component {
           flex-wrap: wrap;
       }
 
-      .ti {
-          animation: fadeInAnimation ease .5s;
-          animation-iteration-count: 1;
-          animation-fill-mode: forwards;
-          height: 27px;
-          width: 27px;
-      }
-
-      @keyframes fadeInAnimation {
-          0% {
-              opacity: 0;
-          }
-          100% {
-              opacity: 1;
-          }
-      }
-
       .about-section {
         margin-bottom: 2rem;
         border-bottom: 1px solid ${CONFIG.palette.surface0};
@@ -307,6 +304,9 @@ class Tabs extends Component {
         border-radius: 15px;
         box-shadow: 0 4px ${CONFIG.palette.mantle}, 0 5px 5px rgb(0 0 0 / 20%);
         margin-bottom: 1rem;
+        opacity: 0;
+        animation: dropIn 0.4s ease forwards;
+        animation-delay: calc(var(--index) * 0.1s);
       }
 
       .about-icon {
