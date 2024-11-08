@@ -19,7 +19,7 @@ class Links extends Component {
             icon: "code",
             color: CONFIG.palette.blue,
             title: "Computer Engineering Student & Full Stack Developer",
-            content: "passionate about creating efficient and scalable solutions while pursuing Computer Engineering"
+            content: "Passionate about creating efficient and scalable solutions while pursuing Computer Engineering"
           },
           {
             icon: "stack",
