@@ -18,20 +18,20 @@ class Links extends Component {
           {
             icon: "code",
             color: CONFIG.palette.blue,
-            title: "Full Stack Developer",
-            content: "Building efficient and scalable web applications"
+            title: "Computer Engineering Student & Full Stack Developer",
+            content: "passionate about creating efficient and scalable solutions while pursuing Computer Engineering"
           },
           {
             icon: "stack",
             color: CONFIG.palette.red,
             title: "Tech Stack",
-            content: "JavaScript • Python • React • Node.js • MongoDB"
+            content: "JavaScript • TypeScript • C/C++ • Python • React • Node.js • Vue"
           },
           {
             icon: "tool",
             color: CONFIG.palette.yellow,
             title: "Tools",
-            content: "Git • Docker • VS Code • Linux"
+            content: "Vite • Git • Docker • VS Code"
           }
         ].map((item, index) => `
           <div class="about-item" style="--index: ${index}">
