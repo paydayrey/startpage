@@ -131,7 +131,6 @@ const default_config = {
     {
       name: "about",
       background_url: `src/img/banners/cbg-8.gif`,
-      component: "AboutComponent",
       categories: [
         {
           name: "Profile",
@@ -141,21 +140,14 @@ const default_config = {
               url: "#",
               icon: "user-circle",
               icon_color: palette.blue,
-              content: "Full-stack developer with a passion for creating efficient and scalable solutions. Currently focused on web development and cloud technologies."
+              content: "Full-stack developer with a passion for creating efficient and scalable solutions."
             },
             {
               name: "Education",
               url: "#",
               icon: "school",
               icon_color: palette.mauve,
-              content: "Computer Science Graduate with focus on Software Engineering"
-            },
-            {
-              name: "Experience",
-              url: "#",
-              icon: "briefcase",
-              icon_color: palette.green,
-              content: "3+ years of experience in full-stack development"
+              content: "Computer Science Graduate"
             }
           ]
         },
@@ -167,47 +159,14 @@ const default_config = {
               url: "#",
               icon: "code",
               icon_color: palette.red,
-              content: "JavaScript, Python, React, Node.js, SQL, MongoDB"
+              content: "JavaScript, Python, React, Node.js"
             },
             {
               name: "Tools",
               url: "#",
               icon: "tools",
               icon_color: palette.peach,
-              content: "Git, Docker, AWS, VS Code, Linux"
-            },
-            {
-              name: "Soft Skills",
-              url: "#",
-              icon: "users",
-              icon_color: palette.yellow,
-              content: "Team Collaboration, Problem Solving, Technical Writing"
-            }
-          ]
-        },
-        {
-          name: "Interests",
-          links: [
-            {
-              name: "Hobbies",
-              url: "#",
-              icon: "heart",
-              icon_color: palette.teal,
-              content: "Coding, Problem Solving, Learning New Technologies"
-            },
-            {
-              name: "Current Focus",
-              url: "#",
-              icon: "target",
-              icon_color: palette.lavender,
-              content: "Exploring AI/ML, Contributing to Open Source"
-            },
-            {
-              name: "Contact",
-              url: "mailto:your.email@example.com",
-              icon: "mail",
-              icon_color: palette.blue,
-              content: "Feel free to reach out for collaborations or opportunities"
+              content: "Git, Docker, VS Code, Linux"
             }
           ]
         }
