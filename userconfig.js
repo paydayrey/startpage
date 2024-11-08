@@ -143,49 +143,30 @@ const default_config = {
               content: "Full-stack developer passionate about creating efficient and scalable solutions."
             },
             {
-              name: "Education",
+              name: "Experience",
               url: "#",
-              icon: "school",
-              icon_color: palette.mauve,
-              content: "Computer Science Graduate with focus on Software Engineering"
+              icon: "briefcase",
+              icon_color: palette.green,
+              content: "Software Engineer with focus on web development and cloud technologies"
             }
           ]
         },
         {
-          name: "Skills",
+          name: "Tech Stack",
           links: [
             {
-              name: "Technologies",
+              name: "Languages & Frameworks",
               url: "#",
               icon: "code",
               icon_color: palette.red,
-              content: "JavaScript, Python, React, Node.js, SQL, MongoDB"
+              content: "JavaScript, Python, React, Node.js, Express"
             },
             {
-              name: "Tools",
+              name: "Tools & Technologies",
               url: "#",
               icon: "tools",
-              icon_color: palette.peach,
-              content: "Git, Docker, VS Code, Linux"
-            }
-          ]
-        },
-        {
-          name: "Current",
-          links: [
-            {
-              name: "Focus",
-              url: "#",
-              icon: "target",
               icon_color: palette.yellow,
-              content: "Full Stack Development, System Design, and Cloud Technologies"
-            },
-            {
-              name: "Projects",
-              url: "#",
-              icon: "code",
-              icon_color: palette.green,
-              content: "Working on web applications and open source contributions"
+              content: "Git, Docker, AWS, MongoDB, PostgreSQL"
             }
           ]
         }
