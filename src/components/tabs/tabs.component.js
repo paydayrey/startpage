@@ -319,4 +319,40 @@ class Tabs extends Component {
         font-size: 1.2rem;
         margin: 0 0 0.5rem 0;
         text-transform: capitalize;
-        font
+        font-family: 'Raleway', sans-serif;
+      }
+
+      .about-content p {
+        color: ${CONFIG.palette.text};
+        margin: 0;
+        line-height: 1.5;
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.9rem;
+      }
+
+      .about-content a {
+        display: inline-block;
+        margin-top: 0.5rem;
+        color: var(--flavour);
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+    `;
+  }
+
+  template() {
+    return `
+      <div id="links" class="-">
+        <div id="panels">
+          <div class="categories">
+            ${Category.getAll(this.tabs)}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  connectedCallback() {
+    this.render();
+  }
+}
