@@ -1,37 +1,69 @@
 class AboutComponent extends Component {
-  constructor(o) {
+  constructor() {
     super();
-    this.options = o;
     this.element = document.createElement("div");
-    this.element.className = "about-container";
+    this.element.className = "about-section";
   }
 
   render() {
-    const aboutContent = `
-      <div class="about-grid">
-        ${this.options.categories.map(category => `
-          <div class="about-section">
-            ${category.name ? `<h2 class="about-category-title">${category.name}</h2>` : ''}
-            <div class="about-items">
-              ${category.links.map(link => `
-                <div class="about-item">
-                  <div class="about-icon">
-                    <i class="ti ti-${link.icon}"></i>
-                  </div>
-                  <div class="about-content">
-                    <h3>${link.name}</h3>
-                    ${link.content ? `<p>${link.content}</p>` : ''}
-                    ${link.url !== '#' ? `<a href="${link.url}" target="_blank">View</a>` : ''}
-                  </div>
-                </div>
-              `).join('')}
-            </div>
+    this.element.innerHTML = `
+      <div class="about-content">
+        <h1>About Rey</h1>
+        <p>Full-stack developer passionate about creating efficient and scalable solutions.</p>
+        <div class="about-details">
+          <div class="about-item">
+            <i class="ti ti-code" style="color: ${CONFIG.palette.blue}"></i>
+            <span>Technologies: JavaScript, Python, React, Node.js</span>
           </div>
-        `).join('')}
+          <div class="about-item">
+            <i class="ti ti-tools" style="color: ${CONFIG.palette.green}"></i>
+            <span>Tools: Git, Docker, VS Code, Linux</span>
+          </div>
+          <div class="about-item">
+            <i class="ti ti-target" style="color: ${CONFIG.palette.yellow}"></i>
+            <span>Focus: Full Stack Development, System Design, Cloud Technologies</span>
+          </div>
+        </div>
       </div>
     `;
-
-    this.element.innerHTML = aboutContent;
     return this.element;
   }
+
+  style() {
+    return `
+      .about-section {
+        background: ${CONFIG.palette.base};
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+      }
+      .about-content h1 {
+        color: ${CONFIG.palette.text};
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .about-content p {
+        color: ${CONFIG.palette.text};
+        margin-bottom: 1.5rem;
+      }
+      .about-details {
+        display: grid;
+        gap: 1rem;
+      }
+      .about-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+      .about-item i {
+        font-size: 1.5rem;
+      }
+      .about-item span {
+        color: ${CONFIG.palette.text};
+      }
+    `;
+  }
 }
+
+customElements.define("about-section", AboutComponent);
