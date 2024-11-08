@@ -11,31 +11,67 @@ class Links extends Component {
       : "";
   }
 
+  static getAboutSection() {
+    return `
+      <div class="about-section">
+        <div class="about-item">
+          <div class="about-icon">
+            <i class="ti ti-code" style="color: ${CONFIG.palette.blue}"></i>
+          </div>
+          <div class="about-content">
+            <h3>Full Stack Developer</h3>
+            <p>Building efficient and scalable web applications</p>
+          </div>
+        </div>
+        <div class="about-item">
+          <div class="about-icon">
+            <i class="ti ti-stack" style="color: ${CONFIG.palette.red}"></i>
+          </div>
+          <div class="about-content">
+            <h3>Tech Stack</h3>
+            <p>JavaScript • Python • React • Node.js • MongoDB</p>
+          </div>
+        </div>
+        <div class="about-item">
+          <div class="about-icon">
+            <i class="ti ti-tool" style="color: ${CONFIG.palette.yellow}"></i>
+          </div>
+          <div class="about-content">
+            <h3>Tools</h3>
+            <p>Git • Docker • VS Code • Linux</p>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
   static getAll(tabName, tabs) {
     const { categories } = tabs.find((f) => f.name === tabName);
-
     return `
-      ${categories
-        .map(({ name, links }) => {
-          return `
-          <li>
-            <h1>${name}</h1>
-              <div class="links-wrapper">
-              ${links
-                .map(
-                  (link) => `
-                  <div class="link-info">
-                    <a href="${link.url}" target="_blank">
-                      ${Links.getIcon(link)}
-                      ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
-                    </a>
-                </div>`,
-                )
-                .join("")}
-            </div>
-          </li>`;
-        })
-        .join("")}
+      ${this.getAboutSection()}
+      <div class="links-section">
+        ${categories
+          .map(({ name, links }) => {
+            return `
+            <li>
+              <h1>${name}</h1>
+                <div class="links-wrapper">
+                ${links
+                  .map(
+                    (link) => `
+                    <div class="link-info">
+                      <a href="${link.url}" target="_blank">
+                        ${Links.getIcon(link)}
+                        ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
+                      </a>
+                  </div>`,
+                  )
+                  .join("")}
+              </div>
+            </li>`;
+          })
+          .join("")}
+      </div>
     `;
   }
 }
@@ -122,6 +158,13 @@ class Tabs extends Component {
           right: 100%;
           background: ${CONFIG.palette.base};
           transition: all .6s;
+      }
+
+      .categories ul.rey {
+          background-image: url("src/img/banners/cbg-8.gif");
+          background-repeat: no-repeat;
+          background-size: 30% auto;
+          background-position: left center;
       }
 
       .categories ul:nth-child(1) {
@@ -250,9 +293,9 @@ class Tabs extends Component {
       }
 
       .about-section {
-        display: grid;
-        gap: 1rem;
-        padding: 1rem;
+        margin-bottom: 2rem;
+        border-bottom: 1px solid ${CONFIG.palette.surface0};
+        padding-bottom: 2rem;
       }
 
       .about-item {
@@ -263,6 +306,7 @@ class Tabs extends Component {
         background: ${CONFIG.palette.mantle};
         border-radius: 15px;
         box-shadow: 0 4px ${CONFIG.palette.mantle}, 0 5px 5px rgb(0 0 0 / 20%);
+        margin-bottom: 1rem;
       }
 
       .about-icon {
@@ -296,12 +340,8 @@ class Tabs extends Component {
         font-size: 0.9rem;
       }
 
-      .about-content a {
-        display: inline-block;
-        margin-top: 0.5rem;
-        color: var(--flavour);
-        text-decoration: none;
-        font-size: 0.9rem;
+      .links-section {
+        padding-top: 1rem;
       }
     `;
   }
