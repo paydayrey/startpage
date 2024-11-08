@@ -140,14 +140,14 @@ const default_config = {
               url: "#",
               icon: "user-circle",
               icon_color: palette.blue,
-              content: "Full-stack developer with a passion for creating efficient and scalable solutions."
+              content: "Full-stack developer passionate about creating efficient and scalable solutions."
             },
             {
               name: "Education",
               url: "#",
               icon: "school",
               icon_color: palette.mauve,
-              content: "Computer Science Graduate"
+              content: "Computer Science Graduate with focus on Software Engineering"
             }
           ]
         },
@@ -159,7 +159,7 @@ const default_config = {
               url: "#",
               icon: "code",
               icon_color: palette.red,
-              content: "JavaScript, Python, React, Node.js"
+              content: "JavaScript, Python, React, Node.js, SQL, MongoDB"
             },
             {
               name: "Tools",
@@ -167,6 +167,25 @@ const default_config = {
               icon: "tools",
               icon_color: palette.peach,
               content: "Git, Docker, VS Code, Linux"
+            }
+          ]
+        },
+        {
+          name: "Current",
+          links: [
+            {
+              name: "Focus",
+              url: "#",
+              icon: "target",
+              icon_color: palette.yellow,
+              content: "Full Stack Development, System Design, and Cloud Technologies"
+            },
+            {
+              name: "Projects",
+              url: "#",
+              icon: "code",
+              icon_color: palette.green,
+              content: "Working on web applications and open source contributions"
             }
           ]
         }
