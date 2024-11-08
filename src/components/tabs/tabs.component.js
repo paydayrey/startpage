@@ -356,3 +356,5 @@ class Tabs extends Component {
     this.render();
   }
 }
+
+customElements.define("tabs-list", Tabs);
