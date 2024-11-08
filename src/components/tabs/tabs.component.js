@@ -5,7 +5,6 @@ class Links extends Component {
 
   static getIcon(link) {
     const defaultColor = CONFIG.palette.base;
-
     return link.icon
       ? `<i class="ti ti-${link.icon} link-icon"
             style="color: ${link.icon_color ?? defaultColor}"></i>`
@@ -13,48 +12,14 @@ class Links extends Component {
   }
 
   static getAll(tabName, tabs) {
-    const tab = tabs.find((f) => f.name === tabName);
-    const { categories } = tab;
-
-    // Handle about tab differently
-    if (tabName === 'about') {
-      return `
-        ${categories
-          .map(({ name, links }) => {
-            return `
-            <li>
-              <h1>${name}</h1>
-              <div class="about-section">
-                ${links
-                  .map(
-                    (link) => `
-                    <div class="about-item">
-                      <div class="about-icon">
-                        ${Links.getIcon(link)}
-                      </div>
-                      <div class="about-content">
-                        <h3>${link.name}</h3>
-                        ${link.content ? `<p>${link.content}</p>` : ''}
-                        ${link.url !== '#' ? `<a href="${link.url}" target="_blank">View</a>` : ''}
-                      </div>
-                    </div>`,
-                  )
-                  .join("")}
-              </div>
-            </li>`;
-          })
-          .join("")}
-      `;
-    }
-
-    // Original link handling for other tabs
+    const { categories } = tabs.find((f) => f.name === tabName);
     return `
       ${categories
         .map(({ name, links }) => {
           return `
           <li>
             <h1>${name}</h1>
-              <div class="links-wrapper">
+            <div class="links-wrapper">
               ${links
                 .map(
                   (link) => `
@@ -63,7 +28,7 @@ class Links extends Component {
                       ${Links.getIcon(link)}
                       ${link.name ? `<p class="link-name">${link.name}</p>` : ""}
                     </a>
-                </div>`,
+                  </div>`,
                 )
                 .join("")}
             </div>
@@ -80,7 +45,7 @@ class Category extends Component {
   }
 
   static getBackgroundStyle(url) {
-    return `style="background-image: url(${url}); background-repeat: no-repeat;background-size: contain;"`;
+    return `style="background-image: url(${url}); background-repeat: no-repeat; background-size: cover; background-position: center;"`;
   }
 
   static getAll(tabs) {
@@ -122,12 +87,8 @@ class Tabs extends Component {
           position: absolute;
       }
 
-      .nav {
-          color: #fff;
-      }
-
       #panels {
-          border-radius: 15px;
+          border-radius: 24px;
           width: 90%;
           max-width: 1200px;
           height: 450px;
@@ -136,8 +97,9 @@ class Tabs extends Component {
           top: 0;
           bottom: 0;
           margin: auto;
-          box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
           background: ${CONFIG.palette.base};
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+          overflow: hidden;
       }
 
       .categories {
@@ -145,7 +107,7 @@ class Tabs extends Component {
           height: 100%;
           overflow: hidden;
           position: relative;
-          border-radius: 15px;
+          border-radius: 24px;
       }
 
       .categories ul {
@@ -154,16 +116,12 @@ class Tabs extends Component {
           width: 100%;
           height: 100%;
           right: 100%;
-          background: ${CONFIG.palette.base} url("../img/bg-1.gif") repeat left;
-          transition: all .6s;
+          background: ${CONFIG.palette.base};
+          transition: all .6s ease;
       }
 
       .categories ul:nth-child(1) {
-          --flavour: ${CONFIG.palette.sapphire};
-      }
-
-      .categories ul:nth-child(2) {
-          --flavour: ${CONFIG.palette.peach};
+          --flavour: ${CONFIG.palette.blue};
       }
 
       .categories ul .links {
@@ -180,7 +138,7 @@ class Tabs extends Component {
           width: 70%;
           height: 100%;
           background: ${CONFIG.palette.base};
-          padding: 4% 6%;
+          padding: 40px;
           flex-wrap: wrap;
           overflow-y: auto;
       }
@@ -192,26 +150,25 @@ class Tabs extends Component {
       .categories ul .links a {
           color: ${CONFIG.palette.text};
           text-decoration: none;
-          font: 700 18px 'Roboto', sans-serif;
-          transition: all .2s;
+          font: 500 16px 'Roboto', sans-serif;
+          transition: all .2s ease;
           display: inline-flex;
           align-items: center;
-          padding: .4em .8em;
+          padding: 12px 20px;
           background: ${CONFIG.palette.mantle};
-          box-shadow: 0 4px ${CONFIG.palette.mantle}, 0 5px 5px rgb(0 0 0 / 20%);
-          border-radius: 15px;
-          margin-bottom: .7em;
+          border-radius: 12px;
+          margin-bottom: 12px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       .categories .link-info {
           display: inline-flex;
+          margin-right: 12px;
       }
 
-      .categories .link-info:not(:last-child) { margin-right: 1em; }
-
       .categories ul .links a:hover {
-          transform: translate(0, 4px);
-          box-shadow: 0 0 rgba(0, 0, 0, 0.25), 0 0 0 rgba(0, 0, 0, .5), 0 -0px 5px rgba(0, 0, 0, .1);
+          transform: translateY(2px);
+          background: ${CONFIG.palette.surface0};
           color: var(--flavour);
       }
 
@@ -220,7 +177,6 @@ class Tabs extends Component {
           position: absolute;
           display: flex;
           text-transform: uppercase;
-          overflow-wrap: break-word;
           width: 25px;
           height: 250px;
           padding: 1em;
@@ -230,22 +186,22 @@ class Tabs extends Component {
           left: calc(15% - 42.5px);
           bottom: 0;
           top: 0;
-          background: linear-gradient(to top, rgb(50 48 47 / 90%), transparent);
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
           color: var(--flavour);
           letter-spacing: 1px;
-          font: 500 30px 'Nunito', sans-serif;
+          font: 500 30px 'Raleway', sans-serif;
           text-align: center;
           flex-wrap: wrap;
           word-break: break-all;
           align-items: center;
-          backdrop-filter: blur(3px);
+          backdrop-filter: blur(10px);
       }
 
       .categories .links li h1 {
           color: ${CONFIG.palette.text};
-          opacity: 0.5;
+          opacity: 0.7;
           font-size: 13px;
-          margin-bottom: 1em;
+          margin-bottom: 16px;
           font-weight: 600;
           letter-spacing: 1px;
           text-transform: uppercase;
@@ -253,89 +209,32 @@ class Tabs extends Component {
       }
 
       .categories .link-icon {
-          font-size: 27px;
-          color: ${CONFIG.palette.text};
+          font-size: 20px;
+          color: inherit;
       }
 
       .categories .link-icon + .link-name {
-          margin-left: 10px;
+          margin-left: 12px;
+          font-weight: 500;
       }
 
       .categories .links-wrapper {
           display: flex;
           flex-wrap: wrap;
+          gap: 12px;
       }
 
       .ti {
-          animation: fadeInAnimation ease .5s;
+          animation: fadeInAnimation ease .3s;
           animation-iteration-count: 1;
           animation-fill-mode: forwards;
-          height: 27px;
-          width: 27px;
+          height: 20px;
+          width: 20px;
       }
 
       @keyframes fadeInAnimation {
-          0% {
-              opacity: 0;
-          }
-          100% {
-              opacity: 1;
-          }
-      }
-
-      .about-section {
-        display: grid;
-        gap: 1rem;
-        padding: 1rem;
-      }
-
-      .about-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 1rem;
-        padding: 1rem;
-        background: ${CONFIG.palette.mantle};
-        border-radius: 15px;
-        box-shadow: 0 4px ${CONFIG.palette.mantle}, 0 5px 5px rgb(0 0 0 / 20%);
-      }
-
-      .about-icon {
-        padding: 0.5rem;
-        background: ${CONFIG.palette.surface0};
-        border-radius: 0.5rem;
-        width: 3rem;
-        height: 3rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .about-content {
-        flex: 1;
-      }
-
-      .about-content h3 {
-        color: var(--flavour);
-        font-size: 1.2rem;
-        margin: 0 0 0.5rem 0;
-        text-transform: capitalize;
-        font-family: 'Raleway', sans-serif;
-      }
-
-      .about-content p {
-        color: ${CONFIG.palette.text};
-        margin: 0;
-        line-height: 1.5;
-        font-family: 'Roboto', sans-serif;
-        font-size: 0.9rem;
-      }
-
-      .about-content a {
-        display: inline-block;
-        margin-top: 0.5rem;
-        color: var(--flavour);
-        text-decoration: none;
-        font-size: 0.9rem;
+          0% { opacity: 0; transform: translateY(5px); }
+          100% { opacity: 1; transform: translateY(0); }
       }
     `;
   }
